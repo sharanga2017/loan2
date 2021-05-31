@@ -11,4 +11,5 @@ public interface DemandService {
 
    void createDemand(DemandView demand);
 
+    DemandDTO getById(Long id);
 }

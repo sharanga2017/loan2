@@ -38,8 +38,6 @@ public class DemandServiceImpl implements DemandService  {
             listDTO.add(demandDTO);
 
         }
-
-
         return listDTO;
     }
 
@@ -52,6 +50,21 @@ public class DemandServiceImpl implements DemandService  {
         demandCreated.setInsuranceRate((demandCreated.getInsuranceRate()).setScale(2,RoundingMode.HALF_UP ));
 
         demandRepository.save(demandCreated);
+    }
+
+
+
+    @Override
+    public DemandDTO getById(Long id){
+
+        Demand demand = demandRepository.findById(id).get();
+
+
+            DemandDTO demandDTO =  modelMapper.map(demand, DemandDTO.class);
+
+
+
+        return demandDTO;
     }
 
 }

@@ -30,7 +30,7 @@ public class DemandView {
     @Positive
     private BigDecimal insuranceRate;
 
-    private boolean jobLostJobInsurance;
+    private Boolean jobLostJobInsurance;
 
     private Integer couverture;
 
@@ -74,11 +74,11 @@ public class DemandView {
         this.insuranceRate = insuranceRate;
     }
 
-    public boolean isJobLostJobInsurance() {
+    public Boolean getJobLostJobInsurance() {
         return jobLostJobInsurance;
     }
 
-    public void setJobLostJobInsurance(boolean jobLostJobInsurance) {
+    public void setJobLostJobInsurance(Boolean jobLostJobInsurance) {
         this.jobLostJobInsurance = jobLostJobInsurance;
     }
 

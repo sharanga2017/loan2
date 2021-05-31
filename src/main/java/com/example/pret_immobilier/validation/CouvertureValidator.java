@@ -18,7 +18,7 @@ public class CouvertureValidator implements ConstraintValidator<Couverture, Dema
             List<Integer> list = Choice.getListRates();
 
            int choice =  demandView.getCouverture();
-            if(demandView.isJobLostJobInsurance())
+            if(demandView.getJobLostJobInsurance())
             {
                 return list.contains(choice);
             }

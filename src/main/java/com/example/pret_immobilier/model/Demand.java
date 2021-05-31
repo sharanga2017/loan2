@@ -18,10 +18,11 @@ public class Demand {
     private int duration;
     private BigDecimal interestRate;
     private BigDecimal insuranceRate;
-    private boolean jobLossInsurance;
+    private Boolean jobLostInsurance;
     private Integer couverture;
 
     private LocalDate dateRequest;
+
 
     public Long getId() {
         return id;
@@ -71,12 +72,12 @@ public class Demand {
         this.insuranceRate = insuranceRate;
     }
 
-    public boolean isJobLossInsurance() {
-        return jobLossInsurance;
+    public Boolean getJobLostInsurance() {
+        return jobLostInsurance;
     }
 
-    public void setJobLossInsurance(boolean jobLossInsurance) {
-        this.jobLossInsurance = jobLossInsurance;
+    public void setJobLostInsurance(Boolean jobLostInsurance) {
+        this.jobLostInsurance = jobLostInsurance;
     }
 
     public Integer getCouverture() {
@@ -94,7 +95,4 @@ public class Demand {
     public void setDateRequest(LocalDate dateRequest) {
         this.dateRequest = dateRequest;
     }
-
-
-
 }

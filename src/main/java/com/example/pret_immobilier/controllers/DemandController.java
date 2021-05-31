@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/demands")
 public class DemandController {
 
 
@@ -23,29 +23,28 @@ public class DemandController {
     }
 
 
-    // ex : GET https://localhost:8080/api/demands/
-    @GetMapping
+    // ex : GET https://localhost:8080/api/demands/all
+    @GetMapping("/all")
     public List<DemandDTO> getDemandList() {
 
         return demandService.getAll();
     }
 
+    // ex : POST https://localhost:8080/api/demands/add/
     @PostMapping("/add")
     public String addDemand(@RequestBody @Valid DemandView demand) {
-
          demandService.createDemand(demand);
-
         return "Demand added";
     }
 
 
-    // ex :  GET  https://localhost:8080/developers/sharanga
+    // ex :  GET  https://localhost:8080/api/demands/id
     @GetMapping("/{id}")
-    public Demand getById(@PathVariable("id") String id) {
+    public DemandDTO getById(@PathVariable("id") Long id) {
+
+        return demandService.getById(id);
 
 
-
-        return null;
     }
 
 
