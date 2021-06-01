@@ -14,7 +14,7 @@ import java.lang.annotation.*;
 public @interface Participation {
 
 
-    String message() default "The participation have to positive and < 50 ";
+    String message() default "The participation have to be positive and < 50% of amount ";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 
