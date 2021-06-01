@@ -4,6 +4,7 @@ package com.example.pret_immobilier.model;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "demands")
@@ -21,8 +22,7 @@ public class Demand {
     private Boolean jobLostInsurance;
     private Integer couverture;
 
-    private LocalDate dateRequest;
-
+    private LocalDateTime dateRequest;
 
     public Long getId() {
         return id;
@@ -88,11 +88,11 @@ public class Demand {
         this.couverture = couverture;
     }
 
-    public LocalDate getDateRequest() {
+    public LocalDateTime getDateRequest() {
         return dateRequest;
     }
 
-    public void setDateRequest(LocalDate dateRequest) {
+    public void setDateRequest(LocalDateTime dateRequest) {
         this.dateRequest = dateRequest;
     }
 }

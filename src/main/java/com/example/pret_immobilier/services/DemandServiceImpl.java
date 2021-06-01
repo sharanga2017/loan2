@@ -9,7 +9,9 @@ import com.example.pret_immobilier.services.tools.MyModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.Clock;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.math.*;
@@ -45,7 +47,8 @@ public class DemandServiceImpl implements DemandService  {
     public void createDemand(DemandView demand) {
          Demand demandCreated = new Demand();
         demandCreated =  modelMapper.map(demand, Demand.class);
-        demandCreated.setDateRequest(LocalDate.now());
+        Clock cl = Clock.systemUTC();
+        demandCreated.setDateRequest(LocalDateTime.now(cl));
         demandCreated.setInterestRate((demandCreated.getInterestRate()).setScale(2, RoundingMode.HALF_UP));
         demandCreated.setInsuranceRate((demandCreated.getInsuranceRate()).setScale(2,RoundingMode.HALF_UP ));
 

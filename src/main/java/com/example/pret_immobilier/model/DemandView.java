@@ -8,6 +8,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 
 @Participation
@@ -33,6 +34,16 @@ public class DemandView {
     private Boolean jobLostJobInsurance;
 
     private Integer couverture;
+
+    private LocalDateTime dateRequest;
+
+    public LocalDateTime getDateRequest() {
+        return dateRequest;
+    }
+
+    public void setDateRequest(LocalDateTime dateRequest) {
+        this.dateRequest = dateRequest;
+    }
 
     public int getAmount() {
         return amount;
