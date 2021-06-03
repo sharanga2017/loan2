@@ -15,6 +15,16 @@ import java.time.LocalDateTime;
 @Couverture
 public class DemandCreated {
 
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Min(100000) @Max(600000)
     private int amount;
 

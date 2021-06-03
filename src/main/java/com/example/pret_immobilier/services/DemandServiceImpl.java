@@ -27,17 +27,17 @@ public class DemandServiceImpl implements DemandService  {
 
 
     @Override
-    public void createDemand(DemandCreated demand) {
-         Demand demandCreated = new Demand();
-        demandCreated =  modelMapper.map(demand, Demand.class);
+    public void createDemand(DemandCreated demandCreated) {
+         Demand demand = new Demand();
+        demand =  modelMapper.map(demandCreated, Demand.class);
         ZoneId zoneEuropeParis = ZoneId.of("Europe/Paris");
 
         Clock clockParis = Clock.system(zoneEuropeParis);
-        demandCreated.setDateRequest(LocalDateTime.now(clockParis));
-        demandCreated.setInterestRate((demandCreated.getInterestRate()).setScale(2, RoundingMode.HALF_UP));
-        demandCreated.setInsuranceRate((demandCreated.getInsuranceRate()).setScale(2,RoundingMode.HALF_UP ));
+        demand.setDateRequest(LocalDateTime.now(clockParis));
+        demand.setInterestRate((demandCreated.getInterestRate()).setScale(2, RoundingMode.HALF_UP));
+        demand.setInsuranceRate((demandCreated.getInsuranceRate()).setScale(2,RoundingMode.HALF_UP ));
 
-        demandRepository.save(demandCreated);
+        demandRepository.save(demand);
     }
 
 
