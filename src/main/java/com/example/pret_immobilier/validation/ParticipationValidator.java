@@ -1,16 +1,14 @@
 package com.example.pret_immobilier.validation;
 
-import com.example.pret_immobilier.model.DemandView;
+import com.example.pret_immobilier.model.DemandCreated;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.time.LocalDate;
-import java.time.Period;
 
-public class ParticipationValidator implements ConstraintValidator<Participation, DemandView > {
+public class ParticipationValidator implements ConstraintValidator<Participation, DemandCreated> {
 
     @Override
-    public boolean isValid(DemandView demand, ConstraintValidatorContext context) {
+    public boolean isValid(DemandCreated demand, ConstraintValidatorContext context) {
            int amount = demand.getAmount();
 
          int haff = demand.getAmount()/2 ;

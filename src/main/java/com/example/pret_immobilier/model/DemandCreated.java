@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Participation
 @Couverture
-public class DemandView {
+public class DemandCreated {
 
     @Min(100000) @Max(600000)
     private int amount;

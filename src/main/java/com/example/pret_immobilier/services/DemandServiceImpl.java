@@ -2,19 +2,14 @@ package com.example.pret_immobilier.services;
 
 
 import com.example.pret_immobilier.model.Demand;
-import com.example.pret_immobilier.model.DemandDTO;
-import com.example.pret_immobilier.model.DemandView;
+import com.example.pret_immobilier.model.DemandCreated;
 import com.example.pret_immobilier.repositories.DemandRepository;
 import com.example.pret_immobilier.services.tools.MyModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.time.Clock;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.List;
 import java.math.*;
 
 @Service
@@ -32,12 +27,9 @@ public class DemandServiceImpl implements DemandService  {
 
 
     @Override
-    public void createDemand(DemandView demand) {
+    public void createDemand(DemandCreated demand) {
          Demand demandCreated = new Demand();
         demandCreated =  modelMapper.map(demand, Demand.class);
-       // Clock cl = Clock.systemUTC();
-
-
         ZoneId zoneEuropeParis = ZoneId.of("Europe/Paris");
 
         Clock clockParis = Clock.system(zoneEuropeParis);

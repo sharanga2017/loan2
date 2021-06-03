@@ -1,15 +1,9 @@
 package com.example.pret_immobilier.services;
 
-import com.example.pret_immobilier.model.DemandDTO;
-import com.example.pret_immobilier.model.DemandView;
-
-import java.util.List;
+import com.example.pret_immobilier.model.DemandCreated;
 
 public interface DemandService {
 
-
-
-   void createDemand(DemandView demand);
-
+   void createDemand(DemandCreated demand);
 
 }
