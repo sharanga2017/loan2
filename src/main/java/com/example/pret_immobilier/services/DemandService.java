@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface DemandService {
 
-    List<DemandDTO> getAll();
+
 
    void createDemand(DemandView demand);
 
-    DemandDTO getById(Long id);
+
 }

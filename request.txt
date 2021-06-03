@@ -1,0 +1,9 @@
+{
+    "amount": 444800000, 
+    "participation": 450000, 
+    "duration": 12, 
+    "interest_rate": 15.46,
+    "insurance_rate": 12.09,
+    "job_lost_insurance": true, 
+    "couverture": 60
+}

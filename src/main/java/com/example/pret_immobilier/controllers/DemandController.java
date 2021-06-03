@@ -23,12 +23,7 @@ public class DemandController {
     }
 
 
-    // ex : GET https://localhost:8080/api/demands/all
-    @GetMapping("/all")
-    public List<DemandDTO> getDemandList() {
 
-        return demandService.getAll();
-    }
 
     // ex : POST https://localhost:8080/api/demands/add/
     @PostMapping("/add")
@@ -38,24 +33,7 @@ public class DemandController {
     }
 
 
-    // ex :  GET  https://localhost:8080/api/demands/id
-    @GetMapping("/{id}")
-    public DemandDTO getById(@PathVariable("id") Long id) {
 
-        return demandService.getById(id);
-
-
-    }
-
-
-
-    @PostMapping
-    public String addDemand(@Valid @RequestBody DemandDTO demand) {
-        System.out.println("add demand");
-
-
-        return " Demand added";
-    }
 
 
 }

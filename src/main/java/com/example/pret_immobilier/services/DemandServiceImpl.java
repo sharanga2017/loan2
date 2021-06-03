@@ -29,20 +29,7 @@ public class DemandServiceImpl implements DemandService  {
         this.demandRepository = demandRepository;
         this.modelMapper = modelMapper;
     }
-    @Override
-    public List<DemandDTO> getAll(){
 
-        List<DemandDTO> listDTO = new ArrayList<DemandDTO>();
-        List<Demand> list = demandRepository.findAll();
-
-        for (Demand demand: list
-        ) {
-            DemandDTO demandDTO =  modelMapper.map(demand, DemandDTO.class);
-            listDTO.add(demandDTO);
-
-        }
-        return listDTO;
-    }
 
     @Override
     public void createDemand(DemandView demand) {
@@ -63,17 +50,6 @@ public class DemandServiceImpl implements DemandService  {
 
 
 
-    @Override
-    public DemandDTO getById(Long id){
 
-        Demand demand = demandRepository.findById(id).get();
-
-
-            DemandDTO demandDTO =  modelMapper.map(demand, DemandDTO.class);
-
-
-
-        return demandDTO;
-    }
 
 }
